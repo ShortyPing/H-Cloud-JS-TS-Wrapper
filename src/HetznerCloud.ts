@@ -16,6 +16,9 @@ export class HetznerCloud {
         this.token = token;
     }
 
+    /**
+     * Get all of your servers
+     */
     public getAllServers(): Promise<Server[]> {
         return new Promise<Server[]>((resolve) => {
             this.makeAPICall("GET", "servers").then(result => {
@@ -28,6 +31,14 @@ export class HetznerCloud {
     }
 
 
+    /**
+     * private function to make a api call to hetzner api
+     * mostly used internal in this wrapper
+     * @param method
+     * @param route
+     * @param body
+     * @private
+     */
     private makeAPICall(method: "POST" | "GET" | "PUT" | "DELETE" | "PATCH" | "OPTIONS", route: string, body?: object) {
         return axios.request({
             method: method,
