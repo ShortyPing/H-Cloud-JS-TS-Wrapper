@@ -1,0 +1,25 @@
+{
+  "name": "hcloud-js-ts-wrapper",
+  "version": "1.0.0",
+  "description": "A wrapper for the Hetzner-Cloud API written Typescript",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShortyPing/H-Cloud-JS-TS-Wrapper.git"
+  },
+  "author": "Michael Steinmoetzger (ShortPing)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ShortyPing/H-Cloud-JS-TS-Wrapper/issues"
+  },
+  "homepage": "https://github.com/ShortyPing/H-Cloud-JS-TS-Wrapper#readme",
+  "devDependencies": {
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "axios": "^0.26.1"
+  }
+}
