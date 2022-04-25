@@ -1,10 +1,13 @@
 {
-  "name": "hcloud-js-ts-wrapper",
+  "name": "hetzner-cloud-js-ts-wrapper",
   "version": "1.0.0",
   "description": "A wrapper for the Hetzner-Cloud API written Typescript",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "build": "tsc",
+    "prepack": "cp package.json dist & cp .npmignore dist & cp README.md dist & rm -rf dist/dist",
+    "pack": "cd dist & npm pack",
+    "postinstall": "cd dist & del package.json & del .npmignore"
   },
   "repository": {
     "type": "git",
