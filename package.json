@@ -7,7 +7,7 @@
     "build": "tsc",
     "prepack": "cp package.json dist & cp .npmignore dist & cp README.md dist & rm -rf dist/dist",
     "pack": "cd dist & npm pack",
-    "postinstall": "cd dist & del package.json & del .npmignore"
+    "postpack": "cd dist & del package.json & del .npmignore & del README.md"
   },
   "repository": {
     "type": "git",
