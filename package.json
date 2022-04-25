@@ -5,9 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "prepack": "cp package.json dist & cp .npmignore dist & cp README.md dist & rm -rf dist/dist",
-    "pack": "cd dist & npm pack",
-    "postpack": "cd dist & del package.json & del .npmignore & del README.md"
+    "startpack": "npm run build && cp package.json dist/ && cp README.md dist/ && cp .npmignore dist/ && cd dist &  npm pack"
   },
   "repository": {
     "type": "git",
