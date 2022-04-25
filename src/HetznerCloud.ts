@@ -2,6 +2,7 @@ import {InvalidTokenException} from "./exceptions/invalid-token.exception";
 import {Server} from "./entities/server";
 import axios from "axios";
 import {ServerManager} from "./server/ServerManager";
+import {DatacenterManager} from "./server/DatacenterManager";
 
 export class HetznerCloud {
 
@@ -10,12 +11,14 @@ export class HetznerCloud {
 
     // Managers
     private serverManager: ServerManager;
+    private datacenterManager: DatacenterManager;
 
     constructor(token: string) {
         if(!(token.length == 64)) {
             throw new InvalidTokenException("Token length must be exact 64")
         }
         this.serverManager = new ServerManager(this)
+        this.datacenterManager = new DatacenterManager(this);
         this.token = token;
     }
 
@@ -23,6 +26,9 @@ export class HetznerCloud {
         return this.serverManager;
     }
 
+    public getDatacenterManager() {
+        return this.datacenterManager;
+    }
 
     /**
      * private function to make a api call to hetzner api
