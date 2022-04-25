@@ -2,7 +2,7 @@
 Licensed under the MIT licensed, created by Michael Steinmötzger
 <br>
 ### NPM Package
-![npm](https://img.shields.io/npm/v/hetzner-cloud-js-ts-wrapper?style=flat-square)
+[![npm](https://img.shields.io/npm/v/hetzner-cloud-js-ts-wrapper?style=flat-square)](https://www.npmjs.com/package/hetzner-cloud-js-ts-wrapper)
 
 ## Installation
 ``npm install hetzner-cloud-js-ts-wrapper``
