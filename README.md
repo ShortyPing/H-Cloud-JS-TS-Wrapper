@@ -1,7 +1,11 @@
 # JavaScript & TypeScript - Hetzner-API Wrapper
 Licensed under the MIT licensed, created by Michael Steinmötzger
 <br>
-Work in Progess! No npm package available atm...
+### NPM Package
+![npm](https://img.shields.io/npm/v/hetzner-cloud-js-ts-wrapper?style=flat-square)
+
+## Installation
+``npm install hetzner-cloud-js-ts-wrapper``
 
 ## Tutorials
 
