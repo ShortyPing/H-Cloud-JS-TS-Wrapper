@@ -7,6 +7,7 @@
     "build": "tsc",
     "startpack": "npm run build && cp package.json dist/ && cp README.md dist/ && cp .npmignore dist/ && cd dist &  npm pack"
   },
+  "main": "HetznerCloud.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ShortyPing/H-Cloud-JS-TS-Wrapper.git"
