@@ -1,6 +1,6 @@
 {
   "name": "hetzner-cloud-js-ts-wrapper",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A wrapper for the Hetzner-Cloud API written Typescript",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
