@@ -22,6 +22,22 @@ export class ServerManager {
         })
     }
 
+    /**
+     * get a server by id
+     * @param id
+     */
+    public getServer(id: string): Promise<Server> {
+        return new Promise((resolve, reject) => {
+            this.hetznerCloud.makeAPICall("GET", "servers/" + id).then(result => {
+                resolve(result.data["server"])
+            }).catch(err => reject(err))
+        })
+    }
+
+    /**
+     * creates a server
+     * @param serverConfig
+     */
     public createServer(serverConfig: ServerCreateInterface): Promise<ServerCreateResponseInterface> {
        return new Promise((resolve, reject) => {
            this.hetznerCloud.makeAPICall("POST", "servers", serverConfig).then((response) => {
@@ -34,10 +50,37 @@ export class ServerManager {
        })
     }
 
+    /**
+     * deletes a server
+     * @param id
+     */
     public deleteServer(id: string) {
         return this.hetznerCloud.makeAPICall("DELETE", "servers/" + id);
     }
 
+    /**
+     * Cuts power to the Server. This forcefully stops it without giving the Server operating system time to gracefully stop. May lead to data loss, equivalent to pulling the power cord. Power off should only be used when shutdown does not work.
+     * @param id
+     */
+    public poweroff(id: string) {
+        return new Promise((resolve, reject) => {
+            this.hetznerCloud.makeAPICall("POST", "servers/" + id + "/actions/poweroff").then(() => {
+                resolve(1)
+            }).catch(err => reject(err))
+        })
+    }
+
+    /**
+     * starts server
+     * @param id
+     */
+    public poweron(id: string) {
+        return new Promise((resolve, reject) => {
+            this.hetznerCloud.makeAPICall("POST", "servers/" + id + "/actions/poweron").then(() => {
+                resolve(1)
+            }).catch(err => reject(err))
+        })
+    }
 }
 
 interface ServerCreateInterface {

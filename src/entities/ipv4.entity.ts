@@ -6,7 +6,7 @@ export interface Ipv4 {
     /**
      * Reverse DNS PTR entry for the IPv4 addresses of this Server
      */
-    dns_tr: string
+    dns_ptr: string
     /**
      * ID of the Resource
      */
